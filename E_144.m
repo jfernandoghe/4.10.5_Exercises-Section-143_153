@@ -37,56 +37,86 @@
 % Solution
 % 
 % Re-formating the table
-% (0,0)(0,5)(0,10)(0,15) (5,0)(1,5)(5,10)(5,15) (10,0)(10,5)(10,10)(10,15)
+% (0,0)(0,5)(0,10)(0,15) (5,0)(5,5)(5,10)(5,15) (10,0)(10,5)(10,10)(10,15)
 % 0.02  0.06 0.02  0.10   0.04 0.15 0.20  0.10   0.01  0.15   0.14   0.01
 % 0.02  0.08 0.10  0.20   0.24 0.39 0.59  0.69   0.70  0.85   0.99   1.0
 % 
 % (a)   To simulate rvs (X, Y)
+px=0; py=0;
 for i=1:1000
-    if x==0 && py==0
+    if px==0 && py==0
         p=0.02;
-    elseif x==0 && y==5
+    elseif px==0 && py==5
         p=0.06;
-    elseif x==0 && y==10
+    elseif px==0 && py==10
         p=0.02;
-    elseif x==0 && y==15
+    elseif px==0 && py==15
         p=0.10;
-    elseif x==5 && y==0
+    elseif px==5 && py==0
         p=0.04;
-    elseif x==5 && y==5
+    elseif px==5 && py==5
         p=0.15;
-    elseif x==5 && y==10
+    elseif px==5 && py==10
         p=0.20;
-    elseif x==5 && y==15
+    elseif px==5 && py==15
         p=0.10;
-    elseif x==10 && y==0
+    elseif px==10 && py==0
         p=0.01;
-    elseif x==10 && y==5
+    elseif px==10 && py==5
         p=0.15;
-    elseif x==10 && y==10
+    elseif px==10 && py==10
         p=0.14;
-    elseif x==10 && y==15
+    elseif px==10 && py==15
         p=0.01;
     end
 end
-% (a)   To simulate total score
-    if u<0.1
-        x(i)=0; y(i)=0;
-    elseif u<0.14
-        x(i)=0; y(i)=1;
-    elseif u<0.16
-        x(i)=0; y(i)=2;
-    elseif u<0.24
-        x(i)=1; y(i)=0;
-    elseif u<0.44
-        x(i)=1; y(i)=1;
-    elseif u<0.50
-        x(i)=1; y(i)=2;
-    elseif u<0.56
-        x(i)=2; y(i)=0;
-    elseif u<0.70
-        x(i)=2; y(i)=1;
-    else
-        x(i)=250; y(i)=2;
+% (b)   To estimate probability of at leats W
+% Re-formating the table
+% (0,0)(0,5)(0,10)(0,15) (5,0)(5,5)(5,10)(5,15) (10,0)(10,5)(10,10)(10,15)
+% 0.02  0.06 0.02  0.10   0.04 0.15 0.20  0.10   0.01  0.15   0.14   0.01
+%  0    5    10     15      5   10   15    20     10    15     20    35
+% Creating a new table for w
+% 0     5       10      15      20      25      30      35
+% 0.02  0.10    0.18    0.45    0.24    0       0       0.01
+for i=1:1000
+    w=20;
+%     w=x+y;
+    if w==0
+        pw=0.02;
+    elseif w<=5
+        pw=0.1;
+    elseif w<=10
+        pw=0.18;
+    elseif w<=15
+        pw=0.45;
+    elseif w<=20
+        pw=0.24;
+    elseif w<=25
+        pw=0;
+    elseif w<=30
+        pw=0;
+    elseif w<=35
+        pw=0.01;
+    end
+end
+% (b)   To estimate probability of maximum M
+for i=1:1000
+    m=x+y;
+    if m==0
+        pm=0.02;
+    elseif m<=5
+        pm=0.1;
+    elseif m<=10
+        pm=0.18;
+    elseif m<=15
+        pm=0.45;
+    elseif m<=20
+        pm=0.24;
+    elseif <=25
+        pm=0;
+    elseif m<=30
+        pm=0;
+    elseif m<=35
+        pm=0.01;
     end
 end
