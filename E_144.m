@@ -5,6 +5,7 @@
 % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % Exercise 24
+% 
 % An instructor has given a short quiz consisting of two parts. For a 
 % randomly selected student, let X=the number of points earned on the first 
 % part and Y=the number of points earned on the second part. Suppose that 

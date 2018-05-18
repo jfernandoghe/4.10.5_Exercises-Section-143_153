@@ -34,10 +34,10 @@
 % possible values of the fixed variable.
 % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-% % Example 4.13
+% Example 4.13
 % 
-% % In Example 4.5, the joint pdf of the amount X of almonds and
-% % amount Y of cashews in a 1-lb can of nuts was
+% In Example 4.5, the joint pdf of the amount X of almonds and
+% amount Y of cashews in a 1-lb can of nuts was
 % 
 % f(x)= 24xy        0<=x<=1, 0<=y<=1, x+y<=1 
 %       0           Otherwise
@@ -78,24 +78,18 @@
 % (d) Use your simulation in part (c) to estimate the probability that the 
 % cost of the contents of a can of nuts exceeds $8.
 % 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Exercise 147
+% 
+% 147. Refer back to Exercise 145.
+% (a) Determine the marginal pdf of X and the conditional pdf of 
+%     Y given X = x.
+% (b) Write a program to simulate (X, Y) using the conditional 
+%     distributions method presented  in this section.
+% (c) What advantage does this method have over the accept–reject approach 
+%     used in Exercise 145?
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % 
 % Solution
 % 
-% (a)   Program implementing accept & reject
-x=zeros(10000,1); y=zeros(10000,1); w=zeros(10000,1);
-i=0;
-while i<10000
-    xstar=rand;
-    ystar=rand;
-    u=rand;
-    if u<=4*xstar*ystar*(xstar+ystar<=1)
-        i=i+1;
-        x(i)=xstar;
-        y(i)=ystar;
-        w=3.5+2.5*x+6.5*y;  % (c)        
-    end
-end
-mean(w);                    % (c)
-std(w);                     % (c)
-mean(w>8);                  % (d)
