@@ -4,6 +4,21 @@
 %      jfernandoghe@gmail.com
 % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% Exercise 113
+% 
+% Let X = height (inches) and Y = weight (lbs) for an American male. 
+% Suppose X and Y have a bivariate normal distribution, the mean and sd of 
+% heights are 70 in and 3 in. the mean and sd of weights are 170 lbs and 
+% 20 lbs, and the correlation coefficient is ρ = .9.
+% (a) Determine the distribution of Y given X ¼ 68, i.e., the weight 
+%     distribution for 5’8’’ American males.
+% (b) Determine the distribution of Y given X = 70, i.e., the weight 
+%     distribution for 5’10’’American males. In what ways is this 
+%     distribution similar to that of part (a), and how are they different?
+% (c) Calculate P(Y < 180jX ¼ 72), the probability that a 6-ft-tall 
+%     American male weighs less than 180 lb.
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % Exercise 150
 % 
 % Refer back to Exercise 113, which specifies a bivariate normal 

@@ -76,7 +76,7 @@
 %     deviation of W. How close is your sample mean to the value 
 %     E(W) = $7.10 determined in Example 4.13?
 % (d) Use your simulation in part (c) to estimate the probability that the 
-% cost of the contents of a can of nuts exceeds $8.
+%     cost of the contents of a can of nuts exceeds $8.
 % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Exercise 147
@@ -93,3 +93,18 @@
 % 
 % Solution
 % 
+x=zeros(10000,1); y=x;
+i=0;
+% (b)
+while i<10000
+    xs=rand;
+    u=rand;
+    if u<=27*xs*(1-xs)^2/4
+        i=i+1;
+        x(i)=xs;
+        v=rand;
+        y(i)=(1-xs)*sqrt(v);
+    end
+end
+
+

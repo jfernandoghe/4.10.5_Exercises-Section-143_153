@@ -63,6 +63,7 @@
 % 
 % conditional on P = p, the number of inspected tiles that meet 
 % specifications is a rv Y ~ Bin(20, p).
+% 
 % (a) Write a program to simulate Y. Your program will first need to 
 %     simulate a value of P, and then generate a variate from the 
 %     appropriate binomial distribution. [Hint: Use your software’s 

@@ -26,3 +26,11 @@
 % 
 % Solution
 % 
+function [X,Y] = bivnorm(mu1,sigma1, mu2,sigma2,rho,n)
+X  =zeros(n,1); Y=zeros(n,1);
+for i=1:n
+    X(i) = random('norm',mu1,sigma1);
+    m = mu2+rho*sigma2/sigma1*(X(i)-mu1);
+    s = sigma2*sqrt(1-rho^2);
+    Y(i) = random('norm',m,s);
+end

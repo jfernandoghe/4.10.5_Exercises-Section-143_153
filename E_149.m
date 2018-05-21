@@ -61,3 +61,16 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % 
 % Solution
+x=zeros(10000,1); y=zeros(10000,1);
+ys=[0 100 200]; py100=[.4 .2 .4];
+py250=[.1 .3 .6];
+for i=1:10000
+    x(i)=randsample([100 250],1);
+    if x(i)==100
+        y(i)=randsample(ys,1,
+        true,py100);
+    else
+        y(i)=randsample(ys,1,
+        true,py250);
+    end
+end

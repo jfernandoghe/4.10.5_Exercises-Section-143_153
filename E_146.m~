@@ -44,6 +44,6 @@ while i<10000
         T = 3*x + 7*y;      % (b)        
     end
 end
-mean(T);                    % (b)
-std(T);                     % (b)
-Tmean=mean(T>9);                  % (b)
+mean(T);                    % (c)
+std(T);                     % (c)
+mean(T>8);                  % (d)
