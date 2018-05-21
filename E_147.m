@@ -96,11 +96,10 @@
 % (a)   Marginal PDF
 %   f(y|x)=f(x,y)=2y/((1-x)^2)      0<=y<=1-1
 % 
-% (c) Simulate 
+% (b) Simulate 
 x=zeros(10000,1);
 y=x;
 i=0;
-
 while i<10000
     xs=rand;
     u=rand;

@@ -22,7 +22,7 @@
 % Exercise 150
 % 
 % Refer back to Exercise 113, which specifies a bivariate normal 
-% distribution for the rvs X = height (inches) and Y ¼ weight (lbs) for 
+% distribution for the rvs X = height (inches) and Y = weight (lbs) for 
 % American males. The parameters of that model were μ1 = 70, σ1 = 3,
 % μ2 = 170, σ2 = 20, and ρ = .9.
 % (a) Use your software’s built-in multivariate normal simulation function 
@@ -39,3 +39,21 @@
 % 
 % Solution
 % 
+% (a) Simulate
+mu1=70;
+mu2=180;
+sigma1=3;
+sigma2=20;
+rho=0.9;
+n=10000;
+X  =zeros(n,1); Y=zeros(n,1);
+for i=1:n
+    X(i) = random('norm',mu1,sigma1);
+    m = mu2+rho*sigma2/sigma1*(X(i)-mu1);
+    s = sigma2*sqrt(1-rho^2);
+    Y(i) = random('norm',m,s);
+end
+histogram(Y);
+% (c) Mean-STD
+ymean = mean(Y>=18.5);
+ystd = std(Y>=18.5)

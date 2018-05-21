@@ -35,6 +35,6 @@ for i=1:n
     s = sigma2*sqrt(1-rho^2);
     Y(i) = random('norm',m,s);
 end
-% (c) Mean-STD
+% (c) Mean-STD See E_150.m
 ymean = mean(Y);
 ystd = std(Y);

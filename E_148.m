@@ -35,7 +35,7 @@
 % 
 % The variance of the proportion P can be determined directly from the pdf 
 % of P via integration. The result is Var(P) = 9/1100, so
-% Var[E(Y|P)] = 400(9/1100) ¼ 36/11. Second, the binomial variance formula 
+% Var[E(Y|P)] = 400(9/1100) = 36/11. Second, the binomial variance formula 
 % np(1  p) implies that the conditional variance of Y given P is
 % Var(Y|P) = 20P(1  P), so
 % 
@@ -59,7 +59,7 @@
 % Consider the situation in Example 4.31: the proportion P of tiles meeting 
 % thermal specifications varies according to the pdf:
 % 
-% f(p) = 9p8,           0 < p < 1; 
+% f(p) = 9p^8,           0 < p < 1; 
 % 
 % conditional on P = p, the number of inspected tiles that meet 
 % specifications is a rv Y ~ Bin(20, p).
@@ -76,3 +76,15 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % 
 % Solution
+% 
+% (a) Simulate P
+x=zeros(10000,1);
+y=x;
+Y=y;
+% (b) At least 10,000
+for i=1:10000
+    Y(i) = binornd(20, 0.9);    %from  Example 4.31 p=0.9
+end
+% (c)
+mean(Y==18);         %P(Y = 18)
+mean(Y>=18);         %P(Y >= 18)
