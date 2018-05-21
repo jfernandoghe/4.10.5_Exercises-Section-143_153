@@ -83,7 +83,9 @@
 % Solution
 % 
 % (a)   Program implementing accept & reject
-x=zeros(10000,1); y=zeros(10000,1); w=zeros(10000,1);
+x=zeros(10000,1);
+y=zeros(10000,1);
+w=zeros(10000,1);
 i=0;
 while i<10000
     xstar=rand;

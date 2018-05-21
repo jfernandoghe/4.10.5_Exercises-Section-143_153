@@ -55,7 +55,8 @@
 % cum prob   0.1   0.14  0.16    0.24  0.44  0.50      0.56  0.70  1.0
 % 
 % (a)   To simulate rvs (X, Y)
-x=zeros(10000,1); y=x;
+x=zeros(10000,1);
+y=x;
 for i=1:10000
     u=rand;
     if u<0.10
